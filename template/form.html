@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <!-- Title Page-->
+    <title>Registeration Form</title>
+
+    <!-- Icons font CSS-->
+    <link href="{% static 'vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'css/form.css' %}" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Event Registration Form</h2>
+                </div>
+                <div class="card-body">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="name">Name<span class="star"> * </span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="Name" required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Email<span class="star"> * </span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="email" name="email" required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Team Name<span class="star"> * </span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="team_name" required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Select Sports<span class="star"> * </span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                         <select name="sports" required="">
+                                            <option disabled="" selected>Choose option</option>
+                        <option> Football boys (16 Players) </option>
+                        <option> Cricket boys (14 Players) </option>
+                        <option> Badminton Boys (Team) </option>
+                        <option> Badminton Girls (Team) </option>
+                        <option> Badminton Boys (Individuals) </option>
+                        <option> Badminton Girls (Individuals) </option>
+                        <option> Basketball Boys (12 Players) </option>
+                        <option> Basketball Girls (12 Players) </option>
+                        <option> Volleyball Boys (6 Players) </option>
+                        <option> Volleyball Girls (6 Players) </option>
+                        <option> Chess (Boys Girls Mix) </option>
+                        <option> Table-Tennis Boys (Team) </option>
+                        <option> Table-Tennis Girls (Team) </option>
+                        <option> Table-Tennis Boys (Individual) </option>
+                        <option> Table-Tennis Girls (Individual) </option>                                        </select>
+                           <div class="select-dropdown"></div>
+                            </div>
+                           </div>
+                         </div>
+                       </div> 
+                       <div class="clear"></div>
+                        <div class="form-row">
+                            <div class="name">College Name<span class="star"> * </span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="Address" required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">City<span class="star"> * </span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="City" required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">State<span class="star"> * </span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="State" required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Phone<span class="star"> * </span></div>
+                            <div class="value">
+                                <div class="input-group">
+                                            <input class="input--style-5" type="text" pattern="[0-9]{10}" name="phone number" required="">
+                                            <label class="label--desc">Phone Number</label>
+                                       </div>
+                                  </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+               <div class="col-md-12 text-center">
+       <p style="float: center">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is developed by Prince Gupta, Pankaj Joshi &amp; Nishkarsh Mishra
+       </p>
+          </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <!-- Vendor JS-->
+    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+    <script src="{% static 'vendor/datepicker/moment.min.js' %}"></script>
+    <script src="{% static 'vendor/datepicker/daterangepicker.js' %}"></script>
+
+    <!-- Main JS-->
+    <script src="{% static 'js/global.js' %}"></script>
+
+</body>
+
+</html>
+<!-- end document-->

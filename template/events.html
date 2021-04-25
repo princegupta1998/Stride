@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Stride Club-Events</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand py-2 px-4" href="{% url 'home' %}">Stride</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+            <li class="nav-item active"><a href="{% url 'events' %}" class="nav-link">Events</a></li>
+            <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About us</a></li>
+            <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a href="{% url 'data' %}" class="nav-link">Players Data</a></li>
+            <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">logout</a></li>
+            {% else %}
+            <!-- <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">register</a></li> -->
+            <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">login</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="hero-wrap js-fullheight" style="background-image: url({% static 'images/bg_2.jpg' %});">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-3 bread">Events</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home</a></span> <span>Events</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section">
+      <div class="container">
+    <div class="row justify-content-center mb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h3 class="subheading"></h3>
+            <h2 class="mb-1">Upcoming Events</h2>
+        </div>
+    </div>
+    <div class="col-md-12">
+            <div class="package-program ftco-animate">
+              <a href="{% url 'form' %}" class="img d-flex justify-content-center align-items-center" style="background-image: url({% static 'images/aaveg.jpg' %}); background-size: 100% 100%;">
+                <span style="font-size: 25px">Register</span>
+              </a>
+              <div class="text mt-3">
+                <h3>AAVEG</h3>
+                <p>To register please click on the above image or Register button.</p>
+              </div>
+            </div>
+          </div>
+
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h3 class="subheading"></h3>
+            <h2 class="mb-1">Events</h2>
+        </div>
+    </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="package-program ftco-animate">
+              <div class="img d-flex justify-content-center align-items-center" style="background-image: url({% static 'images/aaveg.jpg' %});background-size: 100% 100%;">
+                <!--<span>Register</span>-->
+              </div>
+              <div class="text mt-3">
+                <h3>AAVEG (Hustle and Heart set us apart)</h3>
+                <p>Aaveg is a national level sports meet organized by Invertis University. We aim at inculcating the spirit of sportsmanship and propagating the spirit of team work, harmony and peace. Over a span of 3 high-intensity days, the festival will hold a large number of game events like Cricket (M), Football (M), Volleyball (M&W),Table Tennis (M&W), Athletics (M&W), Basketball (M&W), Badminton (M&W) and Kabaddi (M). The participants of every sport have a great opportunity to showcase their talents and grab the exciting prizes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="package-program ftco-animate">
+              <div class="img d-flex justify-content-center align-items-center" style="background-image: url({% static 'images/ipl.jpg' %});background-size: 100% 100%;">
+                <!--<span>Register</span>-->
+              </div>
+              <div class="text mt-3">
+                <h3>IPL(Play like a Champion Today)</h3>
+                <p>The Invertis Premier League (IPL) is a popular sport event of Invertis University Barielly contested during April and May of every year organized by Stride Club.The league was founded by "------"in "-----". The participants of every sport have a great opportunity to showcase their talents and grab the exciting prizes. This event is only for INVERTIANS.
+</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="package-program ftco-animate">
+              <div class="img d-flex justify-content-center align-items-center" style="background-image: url({% static 'images/aswaran.jpg' %});background-size: 100% 100%;">
+                <!--<span>Register</span>-->
+              </div>
+              <div class="text mt-3">
+                <h3>ASWARAN (Rise as ONE)</h3>
+                <p>Aswaran is a group of sporting events of Invertis University that involves competitive running, jumping and threwing contested during August and September of every year organized by Stride Club. Aswaran include all types of athletics competitions like  road running, long Jump, high jump, javelin throw and race walking.The participants of every sport have a great opportunity to showcase their talents and grab the exciting prizes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<div class="row mt-5">
+          <div class="col text-center">
+            <div class="block-27">
+              <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>-->
+      </div>
+    </section>
+
+    <footer class="ftco-footer ftco-section img">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row mb-1">
+          <div class="col-lg-9 col-md-6 mb-5 mb-md-5">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">About Us</h2>
+              <p>Stride, the sports club, provides the wings<br>to the longings of sports seekers.
+              <br>Never let good enough BE enough!</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.facebook.com/Stridethesportsclub/"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/stride_thesportsclub/"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-youtube-play"></span></a></li>
+              </ul>
+            </div>
+          </div>
+
+    <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Invertis Village, Delhi Lucknow Highway NH-24, Bareilly, Uttar Pradesh Pin - 243123, India</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">7579335722</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">itsprince.cr7@gmail.com</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+       <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is developed by Prince Gupta, Pankaj Joshi &amp; Nishkarsh Mishra
+       </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+  </body>
+</html>

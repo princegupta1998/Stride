@@ -1,0 +1,276 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Stride Club-Players Data</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+     
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link href="{% static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand py-2 px-4" href="{% url 'home' %}">Stride</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="{% url 'events' %}" class="nav-link">Events</a></li>
+            <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About us</a></li>
+            <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+            {% if user.is_authenticated %}
+            <li class="nav-item active"><a href="{% url 'data' %}" class="nav-link">Players Data</a></li>
+            <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">logout</a></li>
+            {% else %}
+            <!-- <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">register</a></li> -->
+            <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">login</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+
+    <!--Gallery section-->
+    <section class="hero-wrap js-fullheight" style="background-image: url({% static 'images/bg_2.jpg' %});">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-3 bread">Players Data</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home</a></span>Players Data<span></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+ <section class="ftco-section">
+ <div class="container">
+  {% if all is not None%}
+   <div class="row justify-content-center mb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h3 class="subheading"></h3>
+            <h2 class="mb-1">Players Data</h2>
+
+   <form method="post" action="">
+    {% csrf_token %}
+    <div class="ftco-sec">
+     <select class= "select-css" name="sports" required="">
+        <option>Choose option</option>
+        <option> Football boys (16 Players) </option>
+        <option> Cricket boys (14 Players) </option>
+        <option> Badminton Boys (Team) </option>
+        <option> Badminton Girls (Team) </option>
+        <option> Badminton Boys (Individuals) </option>
+        <option> Badminton Girls (Individuals) </option>
+        <option> Basketball Boys (12 Players) </option>
+        <option> Basketball Girls (12 Players) </option>
+        <option> Volleyball Boys (6 Players) </option>
+        <option> Volleyball Girls (6 Players) </option>
+        <option> Chess (Boys Girls Mix) </option>
+        <option> Table-Tennis Boys (Team) </option>
+        <option> Table-Tennis Girls (Team) </option>
+        <option> Table-Tennis Boys (Individual) </option>
+        <option> Table-Tennis Girls (Individual) </option>
+     </select>
+    </div>
+    <button class="btn btn-primary btn-lg" type="submit" name="search">Search</button>
+    <!-- <button class="btn btn-primary btn-lg" onclick="findTableData()">Search </button> -->
+      </div>
+</div>
+  <div class="table-responsive-lg">
+  <table class="table" id="dataTable">
+    <thead class="thead-light">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Team Name</th>
+      <th>Sports</th>
+      <th>College Name</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Phone No.</th>
+    </tr>
+    </thead>
+    {% for pl in all %}
+    <tbody>
+    <tr>
+      <td>{{ pl.id }}</td>
+      <td>{{ pl.name }}</td>
+      <td>{{ pl.email }}</td>
+      <t style="color:red;">{{ pl.team_name }}</td>
+      <td>{{ pl.sports }}</td>
+      <td>{{ pl.college_name }}</td>
+      <td>{{ pl.city }}</td>
+      <td>{{ pl.state }}</td>
+      <td>{{ pl.phone_no }}</td>
+    </tr>   
+    {% endfor %} 
+    </tbody>   
+  </table>
+</div>
+
+ {% else %}
+  <h1>No data</h1>
+ {% endif %}
+<div>
+ <!-- <a class="btn btn-info" href="{% url 'pdf_view' %}" target="_blank">View Invoice</a> -->
+ <!-- a class="btn btn-info"  href="{% url 'pdf_download' %}">Download Players List</a--> -->
+ <button onclick="javascript:demoFromHTML();">Download</button>
+ </div>
+ </form>
+</div>
+</section>
+
+    <footer class="ftco-footer ftco-section img">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row mb-1">
+          <div class="col-lg-9 col-md-6 mb-5 mb-md-5">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">About Us</h2>
+              <p>Stride, the sports club, provides the wings<br>to the longings of sports seekers.<br>Never let good enough BE enough!</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.facebook.com/Stridethesportsclub/"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/stride_thesportsclub/"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-youtube-play"></span></a></li>
+              </ul>
+            </div>
+          </div>
+
+    <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Invertis Village, Delhi Lucknow Highway NH-24, Bareilly, Uttar Pradesh Pin - 243123, India</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">7579335722</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">itsprince.cr7@gmail.com</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+       <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is developed by Prince Gupta, Pankaj Joshi &amp; Nishkarsh Mishra
+       </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+
+
+<script type="text/javascript">
+      
+        function demoFromHTML() {
+    var pdf = new jsPDF('p', 'pt', 'letter');
+    // source can be HTML-formatted string, or a reference
+    // to an actual DOM element from which the text will be scraped.
+    source = $('#dataTable')[0];
+
+    // we support special element handlers. Register them with jQuery-style 
+    // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+    // There is no support for any other type of selectors 
+    // (class, of compound) at this time.
+    specialElementHandlers = {
+        // element with id of "bypass" - jQuery style selector
+        '#bypassme': function (element, renderer) {
+            // true = "handled elsewhere, bypass text extraction"
+            return true
+        }
+    };
+    margins = {
+        top: 80,
+        bottom: 60,
+        left: 40,
+        width: 522
+    };
+    // all coords and widths are in jsPDF instance's declared units
+    // 'inches' in this case
+    pdf.fromHTML(
+    source, // HTML string or DOM elem ref.
+    margins.left, // x coord
+    margins.top, { // y coord
+        'width': margins.width, // max width of content on PDF
+        'elementHandlers': specialElementHandlers
+    },
+
+    function (dispose) {
+        // dispose: object with X, Y of the last line add to the PDF 
+        //          this allow the insertion of new lines after html
+       /* use this when page reloasd is blaocked
+        $("select.country"). change(function(){
+var selectedCountry = $(this). children("option:selected"). val();
+*/
+        var pdfName = $("select").find("option:selected").val();
+        pdfName = pdfName+'_'+ new Date().getTime();+'.pdf';
+        pdf.save(pdfName);
+    }, margins);
+}
+
+function findTableData(){
+
+
+
+}
+    </script>
+
+  </script>
+  </body>
+</html>

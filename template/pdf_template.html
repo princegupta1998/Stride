@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Players List</title>
+  <style>
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+  </style>
+</head>
+<body>
+    {% csrf_token %}
+<form action="" method="post">
+<div class="table-responsive-lg">
+  <table class="table">
+    <thead class="thead-light">
+      <h1 style="text-align: center;">Players Data</h1>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Team Name</th>
+      <th>Sports</th>
+      <th>College Name</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Phone No.</th>
+      <!-- <th>Email</th> -->
+    </tr>
+    </thead>
+    {% for pl in all %}
+    <tbody>
+    <tr>
+      <td>{{ pl.id }}</td>
+      <td>{{ pl.name }}</td>
+      <td>{{ pl.team_name }}</td>
+      <td>{{ pl.sports }}</td>
+      <td>{{ pl.college_name }}</td>
+      <td>{{ pl.city }}</td>
+      <td>{{ pl.state }}</td>
+      <td>{{ pl.phone_no }}</td>
+      <!-- <td>{{ pl.email }}</td> -->
+    </tr>   
+    {% endfor %} 
+    </tbody>   
+  </table>
+</div>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <head>
+<style>
+    @page {
+        size: a4 portrait;
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 50pt; width: 512pt; top: 50pt; height: 40pt;
+        }
+        @frame content_frame {          /* Content Frame */
+            left: 50pt; width: 512pt; top: 90pt; height: 632pt;
+        }
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+        }
+    }
+</style>
+</head> -->
+
+<!-- <body> -->
+    <!-- Content for Static Frame 'header_frame' -->
+    <!-- <div id="header_content"> -->
+        <!-- <h3>Dennnis Ivanov Company</h3> -->
+    <!-- </div> -->
+
+    <!-- Content for Static Frame 'footer_frame' -->
+    <!-- <div id="footer_content">(c) - page <pdf:pagenumber>
+        of <pdf:pagecount>
+    </div>
+{% csrf_token %}
+     --><!-- HTML Content -->
+    <!-- <table>
+            <tr>
+                <td>{{address}}</td>
+                <td>{{phone}}</td>
+            </tr>
+            <tr>
+                <td>{{city}} {{state}},</td>
+                <td>{{email}}</td>
+            </tr>
+            <tr>
+                <td>{{zipcode}}</td>
+                <td>{{website}}</td>
+            </tr>
+    </table>
+
+    <hr>
+
+    <table>
+        <tr>
+ 
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+ 
+            <td>Hosting Plan</td>
+            <td>$7.99</td>
+            <td>2</td>
+            <td>$15.98</td>
+        </tr>
+        <tr>
+ 
+            <td>consultation </td>
+            <td>$225</td>
+            <td>1</td>
+            <td>$225</td>
+        </tr>
+        <tr>
+ 
+            <td>Service Hours</td>
+            <td>$189</td>
+            <td>45.7</td>
+            <td>$8637.30</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <p><strong>Total: $8878.28</strong></p>
+</body>
+</html> -->

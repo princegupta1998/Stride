@@ -1,0 +1,335 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Stride Club-About</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand py-2 px-4" href="{% url 'home' %}">Stride</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="{% url 'events' %}" class="nav-link">Events</a></li>
+            <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
+            <li class="nav-item active"><a href="{% url 'about' %}" class="nav-link">About us</a></li>
+            <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a href="{% url 'data' %}" class="nav-link">Players Data</a></li>
+            <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">logout</a></li>
+            {% else %}
+            <!-- <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">register</a></li> -->
+            <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">login</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="hero-wrap js-fullheight" style="background-image: url({% static 'images/bg_2.jpg' %});">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-3 bread">About us</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home</a></span> <span>About us</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-about d-md-flex bg-light ftco-section">
+      <div class="one-half img" style="background-image: url({% static 'images/about-2.jpg' %});background-size: 100% 100%;">
+        <a href="https://vimeo.com/426961733" class="icon popup-vimeo d-flex justify-content-center align-items-center"><span class="icon-play">
+        </a>
+      </div>
+      <div class="one-half ftco-animate">
+        <div class="heading-section ftco-animate ">
+          <h3 class="subheading">About Stride Club</h3>
+          <h2 class="mb-5">Welcome <br>To Stride Club</h2>
+        </div>
+        <div>
+          <p> Stride club is the sports club of Abiruchi in Invertis University, whose objective is inculcating the spirit of sportsmanship and propagating the spirit of team work, harmony and peace with the help of sports. Stride club organize events like IPL, Aaveg, Aswarun in which participants take part in various games like Cricket, Football, Volleyball, Table Tennis, Athletics, Basketball, Badminton and Kabaddi and all indoor games.</p>
+        </div>
+      </div>
+     </div>
+    </div>
+    </section>
+
+    <section class=" ftco-about d-md-flex bg-light ftco-section">
+      <div class="one-half img" style="background-image: url({% static 'images/about-3.jpg' %});background-size: 100% 100%;">
+      </div>
+      <div class="one-half ftco-animate ftco-appointment appointment">
+          <h3 class="mb-3">Aim of our Website</h3>
+        <div>
+          <p class="aimpara">Our aim is to connect students from different campuses all over India by making them aware of Sports and can participate in sports events online that are organized by Invertis University.</p>
+        </div>
+      </div>
+     </div>
+    </div>
+    </section>
+
+
+     <!--<section class="ftco-section-services ftco-degree">-->
+    <section class="bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-1">Our Stride Members</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 d-flex">
+            <div class="coach align-items-stretch">
+              <div class="img" style="background-image: url({% static 'images/1.CEO.jpg' %});background-size: 100% 100%;"></div>
+              <div class="text bg-white p-4 ftco-animate">
+                <span class="subheading">C.E.O</span>
+                <h3><a href="#">Mohd.Shakeel</a></h3>
+                <p>Mh.Shakeel is the CEO of Stride Club. He is Versatile sportsman and one of the finest coach. Over the years he has proved his hard work in the form of achievements of their students. His leadership skills has been playing a big role towards the club for managing everything.</p>
+                <ul class="ftco-social-media d-flex mt-4">
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a></li>
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a></li>
+                </ul>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex">
+            <div class="coach align-items-stretch">
+              <div class="img" style="background-image: url({% static 'images/member1.jpg' %});background-size: 100% 100%;"></div>
+              <div class="text bg-white p-4 ftco-animate">
+                <span class="subheading">President</span>
+                <h3><a href="#">Karamveer Singh</a></h3>
+                <p>This is Karamveer Singh the president of Stride club. He is pursuing BBA. The leader his name and his skills towards sports speaks for himself as he is    marvellous sportsman. By his leadership skills and hard work all the events are managed perfectly.</p>
+                <ul class="ftco-social-media d-flex mt-4">
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a></li>
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a></li>
+                </ul>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex">
+            <div class="coach align-items-stretch">
+              <div class="img" style="background-image: url({% static 'images/member2.jpg' %});background-size: 100% 100%;"></div>
+              <div class="text bg-white p-4 ftco-animate">
+                <span class="subheading">Vice-President</span>
+                <h3><a href="#">Aditi Khanduja</a></h3>
+                <p>This is Aditi Khanduja the Vice President of the Stride club from 2nd year as well currently pursuing BBA very hardworking and the second in command, because of ace leadership with her brave sportsmanship and continues to make the stride club a better club.</p>
+                <ul class="ftco-social-media d-flex mt-4">
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a></li>
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a></li>
+                </ul>
+                <p></p>
+              </div>
+            </div>
+          <!--d-md-flex flex-column-reverse-->
+          </div>
+          <div class="col-lg-4 d-flex">
+            <div class="coach  align-items-stretch">
+              <div class="img" style="background-image: url({% static 'images/member3.jpg' %});background-size: 100% 100%;"></div>
+              <div class="text bg-white p-4 ftco-animate">
+                <span class="subheading">Secretary</span>
+                <h3><a href="#">Sanyam nandrajog</a></h3>
+                <p>This is Sanyam Nandrajog Secretory of Stride the sports club from 2nd year currently pursuing B.com. He is very helping and cooperating as his position in the club has been a big support as the backbone of the club, by managing all the small and big work.</p>
+                <ul class="ftco-social-media d-flex mt-4">
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a></li>
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a></li>
+                </ul>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex">
+            <div class="coach align-items-stretch">
+              <div class="img" style="background-image: url({% static 'images/member4.jpg' %});background-size: 100% 100%;"></div>
+              <div class="text bg-white p-4 ftco-animate">
+                <span class="subheading">Joint secretary</span>
+                <h3><a href="#">Jyotsna bhatt</a></h3>
+                <p>This is joint secretory of the stride club the very charming and brave Jyotsna Bhatt from 1st year currently pursuing Bachelors in Legislative Law her contribution towards the club has been commendable in just one year and we are hoping to see more of her in upcoming years.</p>
+                <ul class="ftco-social-media d-flex mt-4">
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a></li>
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a></li>
+                </ul>
+                <p></p>
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-4 d-flex">
+            <div class="coach align-items-stretch">
+              <div class="img" style="background-image: url({% static 'images/member5.jpg' %});background-size: 100% 100%;"></div>
+              <div class="text bg-white p-4 ftco-animate">
+                <span class="subheading">Treasurer</span>
+                <h3><a href="#">Puneet choudhry</a></h3>
+                <p>This is treasurer of the stride the sports club, the very smart and a quick learner and a good sportsman. Punnet Chaudhary from 1st year pursuing   B.com (FM), it's impressive of him to be as devoted towards the club as a treasurer. He manages all the events perfectly with his team.</p>
+                <ul class="ftco-social-media d-flex mt-4">
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a></li>
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a></li>
+                </ul>
+                <p></p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    </section>
+
+    <section class="bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h3 class="subheading"></h3>
+            <h2 class="mb-1">About the Developers</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 d-flex">
+            <div class="coach align-items-stretch">
+              <div class="img" style="background-image: url({% static 'images/Developer1.jpg' %});background-size: 100% 100%;"></div>
+              <div class="text bg-white p-4 ftco-animate">
+                <!--<span class="subheading">C.E.O</span>-->
+                <h3><a href="#">Prince Gupta</a></h3>
+                <p>(Project Leader)<br>(Frontend and backend Designer)</p>
+                <ul class="ftco-social-media d-flex mt-4">
+                  <li class="ftco-animate"><a href="https://twitter.com/PrinceG12142333" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a></li>
+                  <li class="ftco-animate"><a href="https://www.facebook.com/itsprince.cr7" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="https://www.instagram.com/football_._.lover/" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a></li>
+                </ul>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex">
+            <div class="coach align-items-stretch">
+              <div class="img" style="background-image: url({% static 'images/Developer2.jpg' %});background-size: 100% 100%;"></div>
+              <div class="text bg-white p-4 ftco-animate">
+                <!--<span class="subheading">President</span>-->
+                <h3><a href="#">Pankaj Joshi</a></h3>
+                <p>(Front end and Backend Designer)<br>(Content writer)</p>
+                <ul class="ftco-social-media d-flex mt-4">
+                  <li class="ftco-animate"><a href="#" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a></li>
+                  <li class="ftco-animate"><a href="https://www.facebook.com/pnkj.joshi.3" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="https://www.instagram.com/__pnkj__12/" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a></li>
+                </ul>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex">
+            <div class="coach align-items-stretch">
+              <div class="img" style="background-image: url({% static 'images/Developer3.jpg' %});background-size: 100% 100%;"></div>
+              <div class="text bg-white p-4 ftco-animate">
+                <!--<span class="subheading">Vice-President</span>-->
+                <h3><a href="#">Nishkarsh Mishra</a></h3>
+                <p>(Documentry Designer)<br>(Advisor)</p>
+                <ul class="ftco-social-media d-flex mt-4">
+                  <li class="ftco-animate"><a href="https://twitter.com/n_i_s_h_k_u" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a></li>
+                  <li class="ftco-animate"><a href="https://www.facebook.com/Nishu.m22" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="https://www.instagram.com/n_i_s_h_k_u/" class="mr-2 d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a></li>
+                </ul>
+                <p></p>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <footer class="ftco-footer ftco-section img">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row mb-1">
+          <div class="col-lg-9 col-md-6 mb-5 mb-md-5">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">About Us</h2>
+              <p>Stride, the sports club, provides the wings<br>to the longings of sports seekers.<br>Never let good enough BE enough!</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.facebook.com/Stridethesportsclub/"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/stride_thesportsclub/"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-youtube-play"></span></a></li>
+              </ul>
+            </div>
+          </div>
+
+    <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Invertis Village, Delhi Lucknow Highway NH-24, Bareilly, Uttar Pradesh Pin - 243123, India</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">7579335722</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">itsprince.cr7@gmail.com</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+       <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is developed by Prince Gupta, Pankaj Joshi &amp; Nishkarsh Mishra
+       </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+  </body>
+</html>
